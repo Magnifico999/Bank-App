@@ -1,0 +1,51 @@
+﻿@model MakeTransfer
+
+<form asp-action="MakeTransfer">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Make Tansfer</h1>
+        <hr />
+
+        <div class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="FromAccount" class="control-label pt-2" style="font-size:20px;"></label>
+                <input asp-for="FromAccount" class="form-control custom-input" />
+                <span asp-validation-for="FromAccount" class="text-danger"></span>
+
+            </div>
+
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="ToAccount" class="control-label pt-2" style="font-size:20px;"></label>
+                <input asp-for="ToAccount" class="form-control custom-input" />
+                <span asp-validation-for="ToAccount" class="text-danger"></span>
+
+            </div>
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="Amount" class="control-label pt-2" style="font-size:20px;"></label>
+                <input asp-for="Amount" class="form-control custom-input" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+
+            </div>
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="TransactionPin" class="control-label pt-2" style="font-size:20px;"></label>
+                <input asp-for="TransactionPin" class="form-control custom-input" />
+                 <span asp-validation-for="TransactionPin" class="text-danger"></span>
+            </div>
+
+            <div class="col-5 offset-2">
+                <a asp-action="TransactionIndex" asp-controller="Transaction" class="btn-primary btn form-control">Back to List</a>
+            </div>
+            <div class="col-5">
+                <input type="submit" value="Transfer" class="btn btn-success btn form-control" />
+            </div>
+
+        </div>
+    </div>
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

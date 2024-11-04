@@ -1,0 +1,101 @@
+﻿@model RegisterVM
+@{
+    ViewData["Title"] = "Sign up for a new account";
+    bool isAuthenticated = User.Identity.IsAuthenticated;
+}
+@if (!isAuthenticated)
+{
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    <h4 class="text-center">Register</h4>
+                </p>
+                <div class="col-md-8 offset-md-2">
+                    <form asp-action="Register">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-floating py-2 col-12">
+                            <input asp-for="Email" class="form-control"  aria-required="true" />
+                            <label asp-for="Email"></label>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating py-2 col-12">
+                            <input asp-for="Name" class="form-control" aria-required="true" />
+                            <label asp-for="Name"></label>
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating py-2 col-12">
+                            <input asp-for="PhoneNumber" class="form-control" aria-required="true" />
+                            <label asp-for="PhoneNumber"></label>
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating py-2 col-12">
+                            <input asp-for="Address" class="form-control" aria-required="true" />
+                            <label asp-for="Address"></label>
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating py-2 col-12">
+                            <input asp-for="Password" class="form-control" aria-required="true" />
+                            <label asp-for="Password"></label>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-floating py-2 col-12">
+                            <input asp-for="ConfirmPassword" class="form-control"  aria-required="true" />
+                            <label asp-for="ConfirmPassword"></label>
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                       
+                        
+                        <div class="form-group">
+                            <input class="btn btn-outline-success w-100" type="submit" value="Sign up" />
+                        </div>
+                        <p class="paragraph">Already have an account? <a asp-controller="Auth" asp-action="Login"> Sign in</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <img src="~/photos/loginhero.png" alt="Image" class="" id="hero-img" />
+    </div>
+</div>
+}
+else
+{
+
+    <p>You are already logged in. Redirecting...</p>
+
+    <script>window.location.href = '/Account/AccountIndex';</script>
+}
+
+<style>
+   
+    #hero-img {
+        width: 698px;
+        height: 600px;
+        margin-top: -20px;
+    }
+
+    .full-width-button {
+        width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+
+    input[type="text"],
+    input[type="password"] {
+        height: 40px;
+        width: 100%;
+    }
+
+    .btn-outline-success.full-width-button {
+        height: 40px;
+        width: 100%;
+    }
+</style>

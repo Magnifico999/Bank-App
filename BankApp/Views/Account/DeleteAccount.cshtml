@@ -1,0 +1,53 @@
+﻿@model AccountDTO
+
+<form asp-action="DeleteAccount">
+    <br />
+    <div class="container border p-3">
+        <h1 class="text-primary">Delete Account</h1>
+        <hr />
+
+        <input hidden asp-for="Id" />
+        <div class="row">
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="FirstName" class="control-label pt-2" style="font-size:20px;"></label>
+                <input asp-for="FirstName" disabled class="form-control custom-input" />
+            </div>
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="LastName" class="control-label pt-2" style="font-size:20px;"></label>
+                <input asp-for="LastName" disabled class="form-control custom-input" />
+            </div>
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="PhoneNumber" class="control-label pt-2" style="font-size:20px;"></label>
+                <input asp-for="PhoneNumber" disabled class="form-control custom-input" />
+            </div>
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="Email" class="control-label pt-2" style="font-size:20px;"></label>
+                <input asp-for="Email" disabled class="form-control custom-input" />
+            </div>
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="CurrentAccountBalance" class="control-label pt-2" style="font-size:20px;"></label>
+                <input asp-for="CurrentAccountBalance" disabled class="form-control custom-input" />
+            </div>
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="AccountNumberGenerated" class="control-label pt-2" style="font-size:20px;"></label>
+                <input asp-for="AccountNumberGenerated" disabled class="form-control custom-input" />
+            </div>
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="AccountType" class="control-label pt-2" style="font-size:20px;"></label>
+                <input asp-for="AccountType" disabled class="form-control custom-input" />
+            </div>
+            <div class="col-5 offset-2">
+                <a asp-action="AccountIndex" asp-controller="Account" class="btn-primary btn form-control">Back to List</a>
+            </div>
+            <div class="col-5">
+                <input type="submit" value="Delete" class="btn btn-danger btn form-control" />
+            </div>
+
+        </div>
+    </div>
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,31 @@
+C:\Users\hp\Desktop\Bank Project - Copy\BankApp\BankApp.Core\bin\Debug\net6.0\BankApp.Core.deps.json
+C:\Users\hp\Desktop\Bank Project - Copy\BankApp\BankApp.Core\bin\Debug\net6.0\BankApp.Core.dll
+C:\Users\hp\Desktop\Bank Project - Copy\BankApp\BankApp.Core\bin\Debug\net6.0\BankApp.Core.pdb
+C:\Users\hp\Desktop\Bank Project - Copy\BankApp\BankApp.Core\bin\Debug\net6.0\BankApp.Data.dll
+C:\Users\hp\Desktop\Bank Project - Copy\BankApp\BankApp.Core\bin\Debug\net6.0\BankApp.Data.pdb
+C:\Users\hp\Desktop\Bank Project - Copy\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp.Core.csproj.AssemblyReference.cache
+C:\Users\hp\Desktop\Bank Project - Copy\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\Desktop\Bank Project - Copy\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp.Core.AssemblyInfoInputs.cache
+C:\Users\hp\Desktop\Bank Project - Copy\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp.Core.AssemblyInfo.cs
+C:\Users\hp\Desktop\Bank Project - Copy\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\Bank Project - Copy\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp.Core.csproj.CopyComplete
+C:\Users\hp\Desktop\Bank Project - Copy\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp.Core.dll
+C:\Users\hp\Desktop\Bank Project - Copy\BankApp\BankApp.Core\obj\Debug\net6.0\refint\BankApp.Core.dll
+C:\Users\hp\Desktop\Bank Project - Copy\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp.Core.pdb
+C:\Users\hp\Desktop\Bank Project - Copy\BankApp\BankApp.Core\obj\Debug\net6.0\ref\BankApp.Core.dll
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp.Core\bin\Debug\net6.0\BankApp.Core.deps.json
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp.Core\bin\Debug\net6.0\BankApp.Core.dll
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp.Core\bin\Debug\net6.0\BankApp.Core.pdb
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp.Core\bin\Debug\net6.0\BankApp.Data.dll
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp.Core\bin\Debug\net6.0\BankApp.Data.pdb
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp.Core.csproj.AssemblyReference.cache
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp.Core.AssemblyInfoInputs.cache
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp.Core.AssemblyInfo.cs
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp.Core.dll
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp.Core\obj\Debug\net6.0\refint\BankApp.Core.dll
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp.Core.pdb
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp.Core\obj\Debug\net6.0\ref\BankApp.Core.dll
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp..F52EFB03.Up2Date
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp.Core\obj\Debug\net6.0\BankApp.Core.sourcelink.json

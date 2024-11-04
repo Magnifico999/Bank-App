@@ -1,0 +1,128 @@
+﻿@model LoginVM
+
+@{
+    ViewData["Title"] = "Login";
+    bool isAuthenticated = User.Identity.IsAuthenticated;
+}
+@if (!isAuthenticated)
+{
+    <div class="d-flex bg-white w-100 h-auto">
+        <div class="col-6">
+            <div class="card-bodies p-4 card">
+                <h2 class="welcome-heading d-flex justify-content-center w-100">Welcome, User</h2>
+                <p class="login d-flex justify-content-center w-100">Login with your credentials</p>
+                <div class="google-box d-flex justify-content-center w-100">
+                   @*  <div class="box-shadow">
+                        <a asp-area="" asp-controller="Auth" asp-action="Google_Login">
+                            <div class="google-content">
+                                <img src="/photos/Socialicon.png" alt="Sign in with Google" class="google-image" />
+                                <span class="google-text">Sign in with Google</span>
+                            </div>
+                        </a>
+
+                    </div> *@
+                </div>
+                <p class="or-text d-flex justify-content-center w-100 pb-4 pt-4 mb-0">Or</p>
+                <form class="w-100" asp-action="Login">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-floating py-2 col-12">
+                        <input asp-for="Email" class="form-control" aria-required="true" />
+                        <label asp-for="Email"></label>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-floating py-2 col-12">
+                        <input asp-for="Password" class="form-control" type="password" aria-required="true" />
+                        <label asp-for="Password"></label>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input class="btn btn-outline-success w-100" type="submit" value="Login" />
+                    </div>
+                    <p class="paragraph">Don't have an account? <a asp-controller="Auth" asp-action="Register"> Sign up</a></p>
+                </form>
+            </div>
+        </div>
+        <div class="col-6">
+            <img src="~/photos/loginhero.png" alt="Image" class="" id="hero-img" />
+        </div>
+    </div>
+}
+else
+{
+   
+    <p>You are already logged in. Redirecting...</p>
+
+    <script>window.location.href = '/Account/AccountIndex';</script>
+}
+
+
+
+<style>
+    body {
+        overflow: hidden;
+    }
+
+    .box-shadow {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .google-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .google-image {
+        max-width: 100px; 
+        height: auto;
+        margin-right: 10px;
+    }
+
+    .google-text {
+        font-weight: bold;
+    }
+
+    #hero-img {
+        width: 698px;
+        height: 600px;
+        margin-top: -20px;
+    }
+
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0,0,0,.125);
+        border-radius: .25rem;
+        margin-top: -15px;
+    }
+
+    .full-width-button {
+        width: 100%;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+
+    input[type="text"],
+    input[type="password"] {
+        height: 40px;
+        width: 100%;
+    }
+
+    .btn-outline-success.full-width-button {
+        height: 40px;
+        width: 100%;
+    }
+</style>
+

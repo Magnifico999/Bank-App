@@ -1,0 +1,72 @@
+﻿@model UpdateAccountModel
+
+<form asp-action="UpdateAccount">
+    <div class="container border p-3">
+        <h1 class="text-primary">Update Account</h1>
+        <hr />
+
+        <input hidden asp-for="Id" />
+
+        <div class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger col-12"></div>
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="FirstName" class="control-label" style="font-size:20px;">First Name</label>
+                <input asp-for="FirstName" class="form-control custom-input" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="LastName" class="control-label" style="font-size:20px;">Last Name</label>
+                <input asp-for="LastName" class="form-control custom-input" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="Email" class="control-label" style="font-size:20px;">Email</label>
+                <input asp-for="Email" class="form-control custom-input" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="PhoneNumber" class="control-label" style="font-size:20px;">Phone Number</label>
+                <input asp-for="PhoneNumber" class="form-control custom-input" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="AccountType" class="control-label pt-2" style="font-size:20px;">Account Type</label>
+           
+                @Html.DropDownListFor(model => model.AccountType, new SelectList(
+                new List<string> { "Savings", "Current", "Corporate", "Government" }), new { @class = "form-control" })
+                <span asp-validation-for="AccountType" class="text-danger"></span>
+            </div>
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="Pin" class="control-label" style="font-size:20px;">PIN</label>
+                <input asp-for="Pin" class="form-control custom-input" />
+                <span asp-validation-for="Pin" class="text-danger"></span>
+            </div>
+
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="ConfirmPin" class="control-label" style="font-size:20px;">Confirm PIN</label>
+                <input asp-for="ConfirmPin" class="form-control custom-input" />
+                <span asp-validation-for="ConfirmPin" class="text-danger"></span>
+            </div>
+
+            <div class="col-12 col-md-6 pb-3">
+                <label asp-for="DateLastUpdated" class="control-label" style="font-size:20px;">Last Updated</label>
+                <input asp-for="DateLastUpdated" class="form-control custom-input" />
+                <span asp-validation-for="DateLastUpdated" class="text-danger"></span>
+            </div>
+
+            <div class="col-6">
+                <a asp-action="AccountIndex" asp-controller="Account" class="btn btn-primary form-control">Back to List</a>
+            </div>
+            <div class="col-6">
+                <input type="submit" value="Update" class="btn btn-success form-control" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+

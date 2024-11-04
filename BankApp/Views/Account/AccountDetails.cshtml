@@ -1,0 +1,48 @@
+﻿@model Account
+
+@{
+    ViewData["Title"] = "Account details";
+}
+
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <div class="card mb-12">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <div class="card-header text-white bg-info">
+                        <p class="card-text">
+                            <h5 class="card-title text-center">
+                                Account Details
+                            </h5>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <p class="card-text"><b>Account Name: </b>@Model.FirstName @Model.LastName</p>
+                        <p class="card-text"><b>Account Number: </b>@Model.AccountNumberGenerated</p>
+                        <p class="card-text"><b>Phone Number: </b>@Model.PhoneNumber</p>
+                        <p class="card-text"><b>Email: </b>@Model.Email</p>
+                        <p class="card-text"><b>Account Type: </b>@Model.AccountType</p>
+                        <p class="card-text"><b>Account Balance: </b>@Model.CurrentAccountBalance</p>
+
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card-footer">
+                        <p class="card-text">
+                            <a class="btn btn-outline-primary float-right" asp-action="AccountIndex">
+                                Back to List
+                            </a>
+                            <a asp-controller="Account" asp-action="UpdateAccount" asp-route-Id="@Model.Id" class="btn btn-success"><i class="bi bi-pencil-square"></i></a>
+                            <a asp-controller="Account" asp-action="DeleteAccount" asp-route-Id="@Model.Id" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

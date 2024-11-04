@@ -1,0 +1,49 @@
+﻿@{
+    bool isAuthenticated = User.Identity.IsAuthenticated;
+}
+
+@if (!isAuthenticated)
+{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans"
+          rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/Index.css" />
+</head>
+<body>
+    <header class="header" id="Home">
+        <img src="images/logo.svg" alt="easybank" class="logo" />
+        <div class="nav-background">
+            
+        </div>
+        <a class="request-button" asp-controller="Auth" asp-action="Login">Get started</a>
+        <img src="" class="close-button" alt="" />
+    </header>
+
+    <main class="main">
+        <section class="section1">
+            <div class="section1-content">
+                <h1>Next generation digital banking</h1>
+                <p>
+                    Take your financial life online. Your Easybank account will be a
+                    one-stop-shop for spending, saving, budgeting, investing, and much
+                    more.
+                </p>
+                <a class="request-button" asp-controller="Auth" asp-action="Login">Get started</a>
+            </div>
+            <div>
+                <img src="~/images/image-mockups.png" class="section1-image1" alt="" />
+            </div>
+
+        </section>
+    </main>
+</body>
+</html>
+}
+else
+{
+    <p>You are already logged in. Redirecting...</p>
+    <script>window.location.href = '/Account/AccountIndex';</script>
+}
