@@ -222,12 +222,11 @@ C:\Users\hp\Desktop\Bank Project\BankApp\BankApp\bin\Debug\net6.0\Microsoft.AspN
 C:\Users\hp\Desktop\Bank Project\BankApp\BankApp\bin\Debug\net6.0\MimeKit.dll
 C:\Users\hp\Desktop\Bank Project\BankApp\BankApp\bin\Debug\net6.0\System.Formats.Asn1.dll
 C:\Users\hp\Desktop\Bank Project\BankApp\BankApp\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\hp\Desktop\Bank Project\BankApp\BankApp\bin\Debug\net6.0\System.Text.Encoding.CodePages.dll
 C:\Users\hp\Desktop\Bank Project\BankApp\BankApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\hp\Desktop\Bank Project\BankApp\BankApp\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Text.Encoding.CodePages.dll
 C:\Users\hp\Desktop\Bank Project\BankApp\BankApp\bin\Debug\net6.0\BankApp.Core.dll
 C:\Users\hp\Desktop\Bank Project\BankApp\BankApp\bin\Debug\net6.0\BankApp.Data.dll
 C:\Users\hp\Desktop\Bank Project\BankApp\BankApp\bin\Debug\net6.0\BankApp.Core.pdb
 C:\Users\hp\Desktop\Bank Project\BankApp\BankApp\bin\Debug\net6.0\BankApp.Data.pdb
 C:\Users\hp\Desktop\Bank Project\BankApp\BankApp\obj\Debug\net6.0\BankApp.csproj.Up2Date
 C:\Users\hp\Desktop\Bank Project\BankApp\BankApp\obj\Debug\net6.0\BankApp.sourcelink.json
+C:\Users\hp\Desktop\Bank Project\BankApp\BankApp\obj\Debug\net6.0\scopedcss\Views\Shared\_Index.cshtml.rz.scp.css

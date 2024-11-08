@@ -60,7 +60,7 @@
             },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.1.39, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -68,7 +68,7 @@
             },
             "MimeKit": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.8.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

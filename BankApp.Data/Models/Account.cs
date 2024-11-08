@@ -26,16 +26,14 @@ namespace BankApp.Data.Models
         public byte[] PinSalt { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime DateLastUpdated { get; set; }
-        
+        public string UserId { get; set; }
+        public ApplicationUser User { get; set; }
 
-        //Now to generate an account number, let us do it in the constructor
-        //first, I create a Random obj
         Random rand = new Random();
 
         public Account()
         {
-            AccountNumberGenerated = Convert.ToString((long)Math.Floor(rand.NextDouble() * 9_000_000_000L + 1_000_000_000L)); // I did 9_000_000_000 so I can get a 10 - digit random number
-            //AccountName property = FirstName + LastName
+            AccountNumberGenerated = Convert.ToString((long)Math.Floor(rand.NextDouble() * 9_000_000_000L + 1_000_000_000L)); 
             AccountName = $"{FirstName} {LastName}";
         }
     }

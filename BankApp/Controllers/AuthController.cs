@@ -92,8 +92,15 @@ namespace BankApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Logout()
         {
-            await _signInManager.SignOutAsync();
-            return RedirectToAction("Index", "Home");
+            try
+            {
+                await _signInManager.SignOutAsync();
+                return Ok(); 
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"An error occurred: {ex.Message}");
+            }
         }
         public IActionResult AccessDenied(string ReturnUrl)
         {

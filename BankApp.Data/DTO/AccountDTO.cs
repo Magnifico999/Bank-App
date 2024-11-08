@@ -1,4 +1,5 @@
 ﻿using BankApp.Data.Enums;
+using BankApp.Data.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace BankApp.Data.DTO
@@ -17,5 +18,8 @@ namespace BankApp.Data.DTO
         public string AccountNumberGenerated { get; set; }
         public DateTime DateCreated { get; set; }
         public DateTime DateLastUpdated { get; set; }
-    }
+        public string UserId { get; set; }
+        public ApplicationUser User { get; set; }
+
+            }
 }

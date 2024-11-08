@@ -1,205 +1,165 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
+﻿<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - BankApp</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="~/BankApp.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+5hae2CpJe+ckcFK4I3PzX3AMX+K5K8m6qF5Jdd5LVpI2xVZ" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-ygbVcJHOG/cfQl16jb6pWUzOf5v0GK9BBOI8Iz3RiPFAxKm4U8BjQ2MO55r5IMZ7" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/bootstrap-icon.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/BankApp.styles.css" />
+    <script src="~/js/bootstrap4.js"></script>
 </head>
-<body class ="light-mode">
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-               
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<body class="light-mode">
+    <div id="main-wrapper">
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                     @if (User.Identity.IsAuthenticated)
+                    <ul class="navbar-nav me-auto mt-md-0 ">
+                    </ul>
+                    <ul class="navbar-nav">
+                        <partial name="_Identity" />
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        @if (User.Identity != null && User.Identity.IsAuthenticated)
+        {
+            <aside class="left-sidebar" id="sidebar">
+                <div class="sidebar-content">
+                    @if (User.Identity.IsAuthenticated)
                     {
-                        <a class="navbar-brand" asp-area="" asp-controller="Account" asp-action="AccountIndex">BankApp</a>
                         <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item dropdown parentcont">
-                                <a class="nav-link dropdown-toggle" id="btnDrop" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="bi bi-gear"></i> Banking
+                            <li class="sidebar-item">
+                                <a asp-controller="Account" asp-action="AccountIndex" class="sidebar-link waves-effect waves-dark sidebar-link"
+                                   aria-expanded="false" data-toggle="tooltip" title="Account">
+                                    <i class="bi bi-person-circle"></i><span class="hide-menu">Account</span>
                                 </a>
-                                <div id="hide-drop-down" style="color:black">
-                                    <a class="dropdown-item" asp-controller="Account" asp-action="AccountIndex"><i class="bi bi-person-circle"></i> Account</a>
-                                    <a class="dropdown-item" asp-controller="Transaction" asp-action="TransactionIndex"><i class="bi bi-cash"></i> Transaction</a>
-                                </div>
-                                
+                            </li>
+                            <li class="sidebar-item">
+                                <a asp-controller="Transaction" asp-action="TransactionIndex" class="sidebar-link waves-effect waves-dark sidebar-link"
+                                   aria-expanded="false" data-toggle="tooltip" title="Transaction">
+                                    <i class="mdi me-2 mdi-gauge"></i><span class="hide-menu">Transaction</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a asp-controller="Transaction" asp-action="MakeDeposit" class="sidebar-link waves-effect waves-dark sidebar-link"
+                                   aria-expanded="false" data-toggle="tooltip" title="Make Deposit">
+                                    <i class="mdi me-2 mdi-gauge"></i><span class="hide-menu">Make Deposit</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a asp-controller="Transaction" asp-action="MakeTransfer" class="sidebar-link waves-effect waves-dark sidebar-link"
+                                   aria-expanded="false" data-toggle="tooltip" title="Make Transfer">
+                                    <i class="mdi me-2 mdi-gauge"></i><span class="hide-menu">MakeTransfer</span>
+                                </a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a asp-controller="Transaction" asp-action="MakeWithdrawal" class="sidebar-link waves-effect waves-dark sidebar-link"
+                                   aria-expanded="false" data-toggle="tooltip" title="Make Withdrawal">
+                                    <i class="mdi me-2 mdi-gauge"></i><span class="hide-menu">Make Withdrawal</span>
+                                </a>
+                            </li>
+
+                            <li class="sidebar-item">
+                                <a id="logoutBtn" href="#" class="sidebar-link waves-effect waves-dark sidebar-link"
+                                   aria-expanded="false" data-toggle="tooltip" title="Logout">
+                                    <i class="mdi mdi-power"></i>Logout
+                                </a>
                             </li>
                             
                         </ul>
-                        <label class="switch">
-                            <input type="checkbox" id="mode-toggle">
-                            <span class="slider"></span>
-                        </label>
-                        @* <form class="form" asp-controller="Account" asp-action="Search">
-                            <div class="d-flex justify-content-end">
-                                <input name="searchString" type="text" class="search" placeholder="Search for an account..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="bi bi-search"></i></button>
-                            </div>
-                        </form> *@
                     }
-                   
                 </div>
+            </aside>
+        }
 
-                <partial name="_Identity.cshtml" />
+        <div class='page-wrapper'>
+            <div class='container-fluid'>
+                @RenderBody()
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            <partial name="_Notification" />
-            @RenderBody()
-        </main>
+        </div>
+
     </div>
 
-
-    <style>
-        #hide-drop-down {
-            display: none;
-            position: absolute;
-            z-index: 9999999;
-            background: white;
-        }
-
-        .parentcont {
-            position: relative
-        }
-
-        .light-mode {
-            background-color: #ffffff;
-            color: #000000;
-        }
-
-        .dark-mode {
-            background-color: #222222;
-            color: #ffffff;
-        }
-
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-            margin-left: auto;
-            padding-bottom: 0.5rem;
-            padding-top: 0.9rem;
-            margin-right: 1rem;
-        }
-
-            .switch input {
-                opacity: 0;
-                width: 0;
-                height: 0;
-            }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 34px;
-        }
-
-            .slider:before {
-                position: absolute;
-                content: "";
-                height: 26px;
-                width: 26px;
-                left: 4px;
-                bottom: 4px;
-                background-color: white;
-                transition: .4s;
-                border-radius: 50%;
-            }
-
-        input:checked + .slider {
-            background-color: #2196F3;
-        }
-
-            input:checked + .slider:before {
-                transform: translateX(26px);
-            }
-    </style>
-    <script>
-        var getClickBtn = document.getElementById("btnDrop");
-        var element = document.getElementById("hide-drop-down");
-
-        getClickBtn.addEventListener("click", () => {
-
-            if (element.style.display == 'none') {
-
-                element.style.display = "block";
-
-
-            } else {
-
-                element.style.display = "none";
-            }
-
-        });
-        var dropdowns = document.querySelectorAll(".parentcont");
-
-        dropdowns.forEach(function (dropdown) {
-            var btnDrop = dropdown.querySelector(".dropdown-toggle");
-            var hideDropdown = dropdown.querySelector("#hide-drop-down");
-
-            btnDrop.addEventListener("click", function (event) {
-                event.preventDefault();
-                hideDropdown.style.display = (hideDropdown.style.display === 'block') ? 'none' : 'block';
-            });
-        });
-        function setModeFromStorage() {
-            const mode = localStorage.getItem('mode');
-            const page = document.querySelector('body');
-
-            if (mode === 'dark') {
-                page.classList.add('dark-mode');
-                page.classList.remove('light-mode');
-                document.getElementById('mode-toggle').checked = true;
-            } else {
-                page.classList.add('light-mode');
-                page.classList.remove('dark-mode');
-                document.getElementById('mode-toggle').checked = false;
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', setModeFromStorage);
-        const modeToggle = document.getElementById('mode-toggle');
-        const page = document.querySelector('body');
-
-        modeToggle.addEventListener('change', function () {
-            if (modeToggle.checked) {
-                page.classList.add('dark-mode');
-                page.classList.remove('light-mode');
-                localStorage.setItem('mode', 'dark');
-            } else {
-                page.classList.add('light-mode');
-                page.classList.remove('dark-mode');
-                localStorage.setItem('mode', 'light');
-            }
-        
-        });
-    </script>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbVcJHOG/cfQl16jb6pWUzOf5v0GK9BBOI8Iz3RiPFAxKm4U8BjQ2MO55r5IMZ7" crossorigin="anonymous"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
-</html>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .left-sidebar {
+        width: 250px;
+        position: fixed;
+        top: 40px;
+        bottom: 0;
+        overflow-y: auto;
+        background-color: turquoise;
+        padding-top: 20px;
+        transition: transform 0.3s ease; 
+    }
+
+        .left-sidebar.hidden {
+            transform: translateX(-100%); 
+        }
+
+    .sidebar-content {
+        padding: 10px;
+    }
+
+    .page-wrapper {
+        margin-left: 250px;
+        padding: 20px;
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+        transition: margin-left 0.3s ease; /* Smooth transition */
+    }
+
+        .page-wrapper.full-width {
+            margin-left: 0; /* Adjust margin when sidebar is hidden */
+        }
+
+    .dark-mode {
+        background-color: #222222;
+        color: #ffffff;
+    }
+
+    .light-mode {
+        background-color: #ffffff;
+        color: #000000;
+    }
+</style>
+<script>
+    $(document).ready(function () {
+        $('#logoutBtn').click(function (event) {
+            event.preventDefault();
+            $.ajax({
+                url: '/Auth/Logout',
+                type: 'POST',
+                headers: {
+                    'RequestVerificationToken': $('input[name="__RequestVerificationToken"]').val()
+                },
+                success: function (response) {
+                    window.location.href = '/Home/Index';
+                },
+                error: function (xhr, status, error) {
+                    console.error("Logout failed: ", error);
+                }
+            });
+        });
+
+        $('.navbar-toggler').click(function () {
+            $('#sidebar').toggleClass('hidden'); 
+            $('.page-wrapper').toggleClass('full-width'); 
+        });
+    });
+</script>

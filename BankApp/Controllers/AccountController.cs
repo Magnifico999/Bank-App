@@ -19,10 +19,10 @@ namespace BankApp.Controllers
             _service = service;
             _mapper = mapper;
         }
-        public IActionResult AccountIndex(int page = 1)
+        public IActionResult AccountIndex(string userId, int page = 1)
         {
             const int PageSize = 5; 
-            var accounts = _service.GetAllAccounts();
+            var accounts = _service.GetAllAccounts(userId);
 
             if (accounts != null && accounts.Any())
             {
@@ -46,14 +46,14 @@ namespace BankApp.Controllers
 
 
 
-        public IActionResult Search(string searchString)
+        public IActionResult Search(string userId, string searchString)
         {
             if (string.IsNullOrEmpty(searchString))
             {
                 return RedirectToAction(nameof(AccountIndex));
             }
 
-            var accounts = _service.GetAllAccounts();
+            var accounts = _service.GetAllAccounts(userId);
 
             if (accounts == null)
             {

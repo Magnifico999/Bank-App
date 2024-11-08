@@ -1,4 +1,5 @@
 ﻿using BankApp.Data.Enums;
+using BankApp.Data.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace BankApp.Data.DTO
@@ -15,5 +16,7 @@ namespace BankApp.Data.DTO
         public string TransactionParticulars { get; set; }
         public TranStatus TransactionStatus { get; set; }
         public DateTime TransactionDate { get; set; }
+        public string UserId { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }

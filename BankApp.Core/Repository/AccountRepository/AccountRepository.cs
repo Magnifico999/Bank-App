@@ -3,16 +3,19 @@ using BankApp.Data.Models;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 using BankApp.Data.DTO;
+using Microsoft.AspNetCore.Http;
 
 namespace BankApp.Core.Repository.AccountRepository
 {
     public class AccountRepository : IAccountRepository
     {
         private readonly ApplicationDbContext _db;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public AccountRepository(ApplicationDbContext db)
+        public AccountRepository(ApplicationDbContext db, IHttpContextAccessor httpContextAccessor)
         {
             _db = db;
+            _httpContextAccessor = httpContextAccessor;
         }
         public Account Authenticate(string AccountNumber, string Pin)
         {
@@ -43,6 +46,7 @@ namespace BankApp.Core.Repository.AccountRepository
         public async Task<Response> Create(Account account, string Pin, string ConfirmPin)
         {
             var response = new Response();
+
 
             if (!string.IsNullOrWhiteSpace(account.Email))
             {
@@ -118,9 +122,9 @@ namespace BankApp.Core.Repository.AccountRepository
 
         }
 
-        public IEnumerable<Account> GetAllAccounts()
+        public IEnumerable<Account> GetAllAccounts(string userId)
         {
-            return _db.Accounts.ToList();
+            return _db.Accounts.Where(r => r.UserId == userId).ToList();
         }
 
         public Account GetByAccountNumber(string AccountNumber)

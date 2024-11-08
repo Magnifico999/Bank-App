@@ -13,9 +13,9 @@ namespace BankApp.Core.Services.Implementation
         {
             _repo = repo;
         }
-        public Response CreateNewTransaction(Transaction transaction)
+        public Response CreateNewTransaction(string userId, Transaction transaction)
         {
-            return _repo.CreateNewTransaction(transaction);
+            return _repo.CreateNewTransaction(userId, transaction);
         }
 
         public async Task DeleteTransaction(int Id)
@@ -28,9 +28,9 @@ namespace BankApp.Core.Services.Implementation
             return _repo.FindTransactionByDate(date);
         }
 
-        public Response GetAll()
+        public Response GetAll(string userId)
         {
-            return _repo.GetAll();
+            return _repo.GetAll(userId);
         }
 
         public async Task<Transaction> GetById(int Id)
@@ -38,19 +38,19 @@ namespace BankApp.Core.Services.Implementation
            return await _repo.GetById(Id);
         }
 
-        public Response MakeDeposit(string AccountNumber, decimal Amount, string TransactionPin)
+        public Response MakeDeposit(string userId, string AccountNumber, decimal Amount, string TransactionPin)
         {
-            return _repo.MakeDeposit(AccountNumber, Amount, TransactionPin);
+            return _repo.MakeDeposit(userId, AccountNumber, Amount, TransactionPin);
         }
 
-        public Response MakeFundsTransfer(string FromAccount, string ToAccount, decimal Amount, string TransactionPin)
+        public Response MakeFundsTransfer(string userId, string FromAccount, string ToAccount, decimal Amount, string TransactionPin)
         {
-            return _repo.MakeFundsTransfer(FromAccount, ToAccount, Amount, TransactionPin);
+            return _repo.MakeFundsTransfer(userId, FromAccount, ToAccount, Amount, TransactionPin);
         }
 
-        public Response MakeWithdrawal(string AccountNumber, decimal Amount, string TransactionPin)
+        public Response MakeWithdrawal(string userId, string AccountNumber, decimal Amount, string TransactionPin)
         {
-            return _repo.MakeWithdrawal(AccountNumber, Amount, TransactionPin);
+            return _repo.MakeWithdrawal(userId, AccountNumber, Amount, TransactionPin);
         }
     }
 }

@@ -87,11 +87,14 @@ p {
 .section1 {
     position: relative;
     background-color: var(--Very-Light-Gray);
-    padding-left: 10%;
-    height: 174rem;
+    padding: 0; /* Remove padding to ensure it covers full width */
+    height: 100vh; /* Set height to full viewport height */
     display: flex;
     align-items: center;
+    justify-content: center; /* Optional: centers content horizontally */
+    margin: 0; /* Remove any margin that might affect layout */
 }
+
 
 .section1-content {
     width: 460px;

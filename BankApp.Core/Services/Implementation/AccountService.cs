@@ -28,9 +28,9 @@ namespace BankApp.Core.Services.Implementation
             await _repo.Delete(Id);
         }
 
-        public IEnumerable<Account> GetAllAccounts()
+        public IEnumerable<Account> GetAllAccounts(string userId)
         {
-            return _repo.GetAllAccounts();
+            return _repo.GetAllAccounts(userId);
         }
 
         public Account GetByAccountNumber(string AccountNumber)

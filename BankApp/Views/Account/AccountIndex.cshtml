@@ -43,6 +43,7 @@
                                 <th>First Name</th>
                                 <th>Last Name</th>
                                 <th>Account Number</th>
+                                <th>Account Balance</th>
                                 
                                 <th>Actions</th>
                             </tr>
@@ -56,6 +57,7 @@
                                         <td>@item.FirstName</td>
                                         <td>@item.LastName</td>
                                         <td>@item.AccountNumberGenerated</td>
+                                        <td>@item.CurrentAccountBalance</td>
                                         <td>
                                             <a class="btn btn-outline-primary float-right" asp-action="AccountDetails" asp-route-id="@item.Id">
                                                 <i class="bi bi-eye-fill"></i> Show Details

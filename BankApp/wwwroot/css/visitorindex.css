@@ -1,0 +1,96 @@
+@media (max-width: 768px) {
+    #tmlData th:nth-child(3),
+    #tmlData th:nth-child(4), 
+    #tmlData th:nth-child(5),
+    #tmlData th:nth-child(6), 
+    #tmlData th:nth-child(7), 
+    #tmlData th:nth-child(8), 
+    #tmlData th:nth-child(9) { 
+        display: none;
+    }
+
+    #tmlData td:nth-child(3),
+    #tmlData td:nth-child(4),
+    #tmlData td:nth-child(5),
+    #tmlData td:nth-child(6),
+    #tmlData td:nth-child(7),
+    #tmlData td:nth-child(8),
+    #tmlData td:nth-child(9) {
+        display: none;
+    }
+}
+
+.node {
+    background-color: highlight;
+}
+
+.bold-border {
+    border: 1px solid #000 !important;
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #000 !important;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: transparent;
+    color: inherit;
+    margin-left: 3px;
+}
+
+.container {
+    max-width: 100%;
+}
+
+#main-wrapper[data-layout=horizontal] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul,
+#main-wrapper[data-layout=vertical] .left-sidebar[data-sidebarbg=skin6] .sidebar-nav ul {
+    background: highlight;
+}
+
+.table > :not(:last-child) > :last-child > * {
+    border-bottom-color: #e9ecef;
+    color: white;
+  
+}
+
+.scroll-sidebar {
+    height: calc(100% - 20px);
+    position: relative;
+    background-color: highlight;
+}
+
+.card {
+    border: 1px solid #555 !important
+}
+
+.btn.status-btn.btn-secondary {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+    color: #ffffff !important;
+}
+
+#tmlData_wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#tmlData {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.change {
+    color: white !important
+}
+
+[class^="ti-"], [class*=" ti-"] {
+    font-family: 'themify';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: black;
+}

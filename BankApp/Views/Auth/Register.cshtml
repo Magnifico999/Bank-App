@@ -1,5 +1,8 @@
 ﻿@model RegisterVM
 @{
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+@{
     ViewData["Title"] = "Sign up for a new account";
     bool isAuthenticated = User.Identity.IsAuthenticated;
 }

@@ -6,7 +6,7 @@ namespace BankApp.Core.Repository.AccountRepository
     public interface IAccountRepository
     {
         Account Authenticate(string AccountNumber, string Pin);
-        IEnumerable<Account> GetAllAccounts();
+        IEnumerable<Account> GetAllAccounts(string userId);
         Task<Response> Create(Account account, string Pin, string ConfirmPin);
         Task<Response> Update(Account account, string Pin = null);
         Task Delete(int Id);

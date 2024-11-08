@@ -53,12 +53,304 @@
       "PackagePath": "staticwebassets\\BankApp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\Admin.css",
+      "PackagePath": "staticwebassets\\css\\Admin.css"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\Index.css",
       "PackagePath": "staticwebassets\\css\\Index.css"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\PasswordAccount.css",
+      "PackagePath": "staticwebassets\\css\\PasswordAccount.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\Register.css",
+      "PackagePath": "staticwebassets\\css\\Register.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\admin-index.css",
+      "PackagePath": "staticwebassets\\css\\admin-index.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\admin-styles.css",
+      "PackagePath": "staticwebassets\\css\\admin-styles.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\admin-styles.min.css",
+      "PackagePath": "staticwebassets\\css\\admin-styles.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\animate.css",
+      "PackagePath": "staticwebassets\\css\\animate.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-icon.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-icon.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-user.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-user.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-user.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-user.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap1.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap1.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\bootstrap1.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap1.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\datatable1.13.7.css",
+      "PackagePath": "staticwebassets\\css\\datatable1.13.7.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\datatable1.13.7.min.css",
+      "PackagePath": "staticwebassets\\css\\datatable1.13.7.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\font-admin.css",
+      "PackagePath": "staticwebassets\\css\\font-admin.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\font-admin.min.css",
+      "PackagePath": "staticwebassets\\css\\font-admin.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\font-awesome.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\googleapis.css",
+      "PackagePath": "staticwebassets\\css\\googleapis.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\googleapis.min.css",
+      "PackagePath": "staticwebassets\\css\\googleapis.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\googleapis1.css",
+      "PackagePath": "staticwebassets\\css\\googleapis1.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\googleapis1.min.css",
+      "PackagePath": "staticwebassets\\css\\googleapis1.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\login-bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\login-bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\login-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\login-bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\poppins.css",
+      "PackagePath": "staticwebassets\\css\\poppins.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\poppins.min.css",
+      "PackagePath": "staticwebassets\\css\\poppins.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\select.css",
+      "PackagePath": "staticwebassets\\css\\select.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\select.min.css",
+      "PackagePath": "staticwebassets\\css\\select.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\select.min.css.map",
+      "PackagePath": "staticwebassets\\css\\select.min.css.map"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\spinners.css",
+      "PackagePath": "staticwebassets\\css\\spinners.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\style.min.css",
+      "PackagePath": "staticwebassets\\css\\style.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\sweetalert.css",
+      "PackagePath": "staticwebassets\\css\\sweetalert.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\sweetalert.min.css",
+      "PackagePath": "staticwebassets\\css\\sweetalert.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\sweetalert.min.css.map",
+      "PackagePath": "staticwebassets\\css\\sweetalert.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\user.css",
+      "PackagePath": "staticwebassets\\css\\user.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\visitorindex.css",
+      "PackagePath": "staticwebassets\\css\\visitorindex.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\visitorindex.min.css",
+      "PackagePath": "staticwebassets\\css\\visitorindex.min.css"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\css\\visitorindex.min.css.map",
+      "PackagePath": "staticwebassets\\css\\visitorindex.min.css.map"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\favicon.ico",
@@ -77,8 +369,92 @@
       "PackagePath": "staticwebassets\\images\\logo.svg"
     },
     {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\admin.js",
+      "PackagePath": "staticwebassets\\js\\admin.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\app-style-switcher.js",
+      "PackagePath": "staticwebassets\\js\\app-style-switcher.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\bootstrap1.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap1.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\bootstrap4.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap4.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\chart.js",
+      "PackagePath": "staticwebassets\\js\\chart.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\createvisitor.js",
+      "PackagePath": "staticwebassets\\js\\createvisitor.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\custom.js",
+      "PackagePath": "staticwebassets\\js\\custom.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\custom.min.js",
+      "PackagePath": "staticwebassets\\js\\custom.min.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\dashboard1.js",
+      "PackagePath": "staticwebassets\\js\\dashboard1.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\datatable1.13.7.js",
+      "PackagePath": "staticwebassets\\js\\datatable1.13.7.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\excel.js",
+      "PackagePath": "staticwebassets\\js\\excel.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\googleapi.js",
+      "PackagePath": "staticwebassets\\js\\googleapi.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\index.js",
+      "PackagePath": "staticwebassets\\js\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\jquery-admin.js",
+      "PackagePath": "staticwebassets\\js\\jquery-admin.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\jquery.slimscroll.js",
+      "PackagePath": "staticwebassets\\js\\jquery.slimscroll.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\jquerythree.js",
+      "PackagePath": "staticwebassets\\js\\jquerythree.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\login-bootstrap.js",
+      "PackagePath": "staticwebassets\\js\\login-bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\popper.js",
+      "PackagePath": "staticwebassets\\js\\popper.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\select.js",
+      "PackagePath": "staticwebassets\\js\\select.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\sidebarmenu.js",
+      "PackagePath": "staticwebassets\\js\\sidebarmenu.js"
+    },
+    {
       "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\js\\sweetalert.js",
+      "PackagePath": "staticwebassets\\js\\sweetalert.js"
     },
     {
       "Id": "C:\\Users\\hp\\Desktop\\Bank Project\\BankApp\\BankApp\\wwwroot\\lib\\bootstrap\\LICENSE",

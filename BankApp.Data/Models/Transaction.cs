@@ -18,7 +18,8 @@ namespace BankApp.Data.Models
         public string TransactionParticulars { get; set; }
         public TranType TransactionType { get; set; }
         public DateTime TransactionDate { get; set; }
-
+        public string UserId { get; set; }
+        public ApplicationUser User { get; set; }
 
         public Transaction()
         {

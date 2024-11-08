@@ -4,6 +4,10 @@ using BankApp.Data.Models;
 using BankApp.Core.Services.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
+using BankApp.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace BankApp.Controllers
 {
@@ -12,64 +16,25 @@ namespace BankApp.Controllers
     {
         private readonly ITransactionService _service;
         IMapper _mapper;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly ApplicationDbContext _db;
+        private readonly UserManager<ApplicationUser> _userManager;
         protected Response _response;
         private const int PageSize = 5;
 
-        public TransactionController(ITransactionService service, IMapper mapper)
+        public TransactionController(ITransactionService service, IMapper mapper, IHttpContextAccessor httpContextAccessor, ApplicationDbContext db, UserManager<ApplicationUser> userManager)
         {
             _service = service;
             _mapper = mapper;
+            _httpContextAccessor = httpContextAccessor;
+            _db = db;
+            _userManager = userManager;
         }
-        public IActionResult TransactionIndex(int page = 1)
+        public IActionResult TransactionIndex()
         {
-            var transactionsResponse = _service.GetAll();
-
-            if (transactionsResponse.ResponseCode == "00" && transactionsResponse.Data is List<Transaction> transactions)
-            {
-                var paginatedTransactions = transactions
-                    .Skip((page - 1) * PageSize)
-                    .Take(PageSize)
-                    .ToList();
-
-                var model = new PaginatedList<Transaction>(paginatedTransactions, transactions.Count, page, PageSize);
-                return View(model);
-            }
-            else
-            {
-                var emptyList = new PaginatedList<Transaction>(new List<Transaction>(), 0, 1, PageSize);
-                return View(emptyList);
-            }
+            return View();
         }
-        public IActionResult Search(string searchString, int page = 1)
-        {
-            var transactionsResponse = _service.GetAll();
-
-            if (transactionsResponse.ResponseCode == "00" && transactionsResponse.Data is List<Transaction> transactions)
-            {
-                if (!string.IsNullOrEmpty(searchString))
-                {
-                    transactions = transactions.Where(t =>
-                        t.TransactionUniqueReference.Contains(searchString) ||
-                        t.TransactionAmount.ToString().Contains(searchString) ||
-                        t.TransactionSourceAccount.ToString().Contains(searchString) ||
-                        t.TransactionDestinationAccount.ToString().Contains(searchString) ||
-                        t.TransactionAmount.ToString().Contains(searchString) ||
-                        t.TransactionType.ToString().Contains(searchString)).ToList();
-                }
-
-                var paginatedTransactions = transactions
-                    .Skip((page - 1) * PageSize)
-                    .Take(PageSize)
-                    .ToList();
-
-                var model = new PaginatedList<Transaction>(paginatedTransactions, transactions.Count, page, PageSize);
-                return View("TransactionIndex", model);
-            }
-            else
-            {
-                return View(new List<Transaction>());
-            }
-        }
+        
 
         public async Task<IActionResult> TransactionDetails(int id)
         {
@@ -77,31 +42,6 @@ namespace BankApp.Controllers
             return View(transactionDetail);
         }
 
-        public IActionResult SearchTransactions(string searchString = null, DateTime? searchDate = null)
-        {
-            var transactionsResponse = _service.GetAll();
-
-            if (transactionsResponse.ResponseCode == "00" && transactionsResponse.Data is List<Transaction> transactions)
-            {
-                if (!string.IsNullOrEmpty(searchString))
-                {
-                    transactions = transactions.Where(t =>
-                        t.TransactionUniqueReference.Contains(searchString)).ToList();
-                }
-
-                if (searchDate != null)
-                {
-                    transactions = transactions.Where(t =>
-                        t.TransactionDate.Date == searchDate.Value.Date).ToList();
-                }
-
-                return View("TransactionIndex");
-            }
-            else
-            {
-                return View(new List<Transaction>());
-            }
-        }
 
         public IActionResult MakeDeposit()
         {
@@ -115,7 +55,9 @@ namespace BankApp.Controllers
         {
             try
             {
-                Response response = _service.MakeDeposit(AccountNumber, Amount, TransactionPin);
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                Response response = _service.MakeDeposit(userId, AccountNumber, Amount, TransactionPin);
 
                 if (response != null && response.ResponseCode == "03")
                 {
@@ -123,7 +65,6 @@ namespace BankApp.Controllers
                     ModelState.AddModelError(string.Empty, "Invalid account number or pin");
                     return View();
                 }
-                
                 else if (response != null && response.ResponseCode == "00")
                 {
                     TempData["success"] = "Deposit successful";
@@ -152,12 +93,27 @@ namespace BankApp.Controllers
                 return View();
             }
         }
-
-        public IActionResult MakeTransfer()
+        public async Task<IActionResult> MakeTransfer()
         {
+            var user = await _userManager.GetUserAsync(User);
+
+            if (user == null)
+            {
+                return Unauthorized(); 
+            }
+
+            var userAccount = _db.Accounts.FirstOrDefault(a => a.Email == user.Email);
+
+            if (userAccount == null)
+            {
+                return NotFound();
+            }
+
+            ViewBag.FromAccountNumber = userAccount.AccountNumberGenerated;
 
             return View();
         }
+
 
 
         [HttpPost]
@@ -166,7 +122,9 @@ namespace BankApp.Controllers
         {
             try
             {
-                Response response = _service.MakeFundsTransfer(FromAccount, ToAccount, Amount, TransactionPin);
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                Response response = _service.MakeFundsTransfer(userId, FromAccount, ToAccount, Amount, TransactionPin);
 
                 if (response != null && response.ResponseCode == "03")
                 {
@@ -174,7 +132,6 @@ namespace BankApp.Controllers
                     ModelState.AddModelError(string.Empty, "Invalid account number or pin");
                     return View();
                 }
-
                 else if (response != null && response.ResponseCode == "00")
                 {
                     TempData["success"] = "Transfer successful";
@@ -183,11 +140,13 @@ namespace BankApp.Controllers
                 else
                 {
                     TempData["error"] = "Failed to make a transfer.";
-                    ModelState.AddModelError(string.Empty, "Check the pin, account number or if the amount exceeds 200000.");
-                    return View();
+                    ModelState.AddModelError(string.Empty, "Check the pin, account number or if the amount exceeds 200,000.");
+
                 }
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
+
                 if (ex.Message.Contains("Transfer amount should not be within the certain range"))
                 {
                     TempData["error"] = "Transfer amount should not be within the transfer range";
@@ -196,15 +155,14 @@ namespace BankApp.Controllers
                 }
                 else
                 {
-                    TempData["error"] = "An error occurred while Transferring";
-                    ModelState.AddModelError(string.Empty, "An error occurred while Transferring");
+                    TempData["error"] = "An error occurred while transferring";
+                    ModelState.AddModelError(string.Empty, "An error occurred while transferring");
                 }
-                return View();
+                
             }
-
-            
-
+            return View();
         }
+
         public IActionResult MakeWithdrawal()
         {
 
@@ -218,7 +176,8 @@ namespace BankApp.Controllers
         {
             try
             {
-                Response response = _service.MakeWithdrawal(AccountNumber, Amount, TransactionPin);
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                Response response = _service.MakeWithdrawal(userId, AccountNumber, Amount, TransactionPin);
 
                 if (response != null && response.ResponseCode == "03")
                 {
@@ -299,5 +258,15 @@ namespace BankApp.Controllers
             return RedirectToAction(nameof(TransactionIndex));
 
         }
+        #region API CALLS
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var records = _service.GetAll(userId);
+
+            return Json(records);
+        }
+        #endregion
     }
 }

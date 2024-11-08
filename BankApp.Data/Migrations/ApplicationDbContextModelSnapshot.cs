@@ -22,35 +22,6 @@ namespace BankApp.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("BankApp.Data.DTO.EmailTemplate", b =>
-                {
-                    b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Body")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("ModifiedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Purpose")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Subject")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("EmailTemplates");
-                });
-
             modelBuilder.Entity("BankApp.Data.Models.Account", b =>
                 {
                     b.Property<int>("Id")
@@ -96,7 +67,12 @@ namespace BankApp.Migrations
                     b.Property<byte[]>("PinSalt")
                         .HasColumnType("varbinary(max)");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Accounts");
 
@@ -108,8 +84,8 @@ namespace BankApp.Migrations
                             AccountNumberGenerated = "9053769810",
                             AccountType = 3,
                             CurrentAccountBalance = "999999999",
-                            DateCreated = new DateTime(2024, 1, 3, 5, 27, 22, 338, DateTimeKind.Local).AddTicks(8403),
-                            DateLastUpdated = new DateTime(2024, 1, 3, 5, 27, 22, 338, DateTimeKind.Local).AddTicks(8416),
+                            DateCreated = new DateTime(2024, 11, 4, 15, 58, 48, 305, DateTimeKind.Local).AddTicks(4177),
+                            DateLastUpdated = new DateTime(2024, 11, 4, 15, 58, 48, 305, DateTimeKind.Local).AddTicks(4186),
                             Email = "settlement@youbank.com",
                             FirstName = "YouBank",
                             LastName = "settlement Account",
@@ -138,9 +114,6 @@ namespace BankApp.Migrations
 
                     b.Property<string>("FullName")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsEmailVerified")
-                        .HasColumnType("bit");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -221,7 +194,12 @@ namespace BankApp.Migrations
                     b.Property<string>("TransactionUniqueReference")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Transaction");
                 });
@@ -357,6 +335,24 @@ namespace BankApp.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("BankApp.Data.Models.Account", b =>
+                {
+                    b.HasOne("BankApp.Data.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("BankApp.Data.Models.Transaction", b =>
+                {
+                    b.HasOne("BankApp.Data.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

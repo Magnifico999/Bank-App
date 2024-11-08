@@ -8,7 +8,6 @@ namespace BankApp.Data.DTO
         [RegularExpression(@"^[0][1-9]\d{9}$|^[1-9]\d{9}$", ErrorMessage = "Account Number must be 10-digit")]
         public string AccountNumber { get; set; }
 
-        //[Required(AllowEmptyStrings =true)]
         public decimal Amount { get; set; }
 
         [Required(ErrorMessage = "Transaction Pin is required.")]
