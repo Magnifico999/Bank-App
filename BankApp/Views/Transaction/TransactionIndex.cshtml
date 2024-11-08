@@ -1,88 +1,4 @@
-﻿@* @{
-    ViewData["Title"] = "Transaction Index";
-}
-
-<h2>Transaction Index</h2>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-
-<table id="transactionsTable" class="display" style="width:100%">
-    <thead>
-        <tr>
-            <th>Transaction ID</th>
-            <th>Unique Reference</th>
-            <th>Amount</th>
-            <th>Status</th>
-            <th>Source Account</th>
-            <th>Destination Account</th>
-            <th>Transaction Type</th>
-            <th>Date</th>
-        </tr>
-    </thead>
-    <tbody>
-       
-    </tbody>
-</table>
-
-@section Scripts {
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            $('#transactionsTable').DataTable({
-                "ajax": {
-                    "url": "/transaction/getall",  
-                    "dataSrc": "data"
-                },
-                "columns": [
-                    { "data": "id" }, 
-                    { "data": "transactionUniqueReference" }, 
-                    { "data": "transactionAmount" },
-                    {
-                        "data": "transactionStatus", "render": function (data) {
-                            switch (data) {
-                                case 0: return "Failed";
-                                case 1: return "Success";
-                                case 2: return "Error";
-                                default: return "Unknown";
-                            }
-                        }
-                    },
-                    { "data": "transactionSourceAccount" }, 
-                    { "data": "transactionDestinationAccount" },
-                    {
-                        "data": "transactionType", "render": function (data) {
-                            switch (data) {
-                                case 0: return "Deposit";
-                                case 1: return "Withdrawal";
-                                case 2: return "Transfer";
-                                default: return "Unknown";
-                            }
-                        }
-                    },
-                    {
-                        "data": "transactionDate", "render": function (data) {
-                            return new Date(data).toLocaleString();
-                        }
-                    }
-                   
-                ]
-            });
-        });
-    </script>
-
-    <link rel="stylesheet" href="~/css/datatable1.13.7.css">
-}
-<style>
-    table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting_asc_disabled, table.dataTable thead > tr > th.sorting_desc_disabled, table.dataTable thead > tr > td.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting_asc_disabled, table.dataTable thead > tr > td.sorting_desc_disabled {
-        cursor: pointer;
-        position: relative;
-        padding-right: 26px;
-        background-color: turquoise;
-    }
-</style> *@
-@{
+﻿@{
     ViewData["Title"] = "Transaction Index";
 }
 
@@ -109,15 +25,11 @@
 </table>
 
 @section Scripts {
-    <!-- Load jQuery first -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- Handle potential conflicts -->
     <script>
         var $j = jQuery.noConflict();
     </script>
 
-    <!-- Load DataTables JS -->
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 
     <script>

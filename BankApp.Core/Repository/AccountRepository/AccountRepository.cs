@@ -122,9 +122,9 @@ namespace BankApp.Core.Repository.AccountRepository
 
         }
 
-        public IEnumerable<Account> GetAllAccounts(string userId)
+        public IEnumerable<Account> GetAllAccounts()
         {
-            return _db.Accounts.Where(r => r.UserId == userId).ToList();
+            return _db.Accounts.ToList();
         }
 
         public Account GetByAccountNumber(string AccountNumber)

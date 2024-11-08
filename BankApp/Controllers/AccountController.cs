@@ -4,6 +4,7 @@ using BankApp.Data.Models;
 using BankApp.Core.Services.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace BankApp.Controllers
 {
@@ -13,88 +14,20 @@ namespace BankApp.Controllers
         private readonly IAccountService _service;
         protected Response _response;
         private readonly IMapper _mapper;
-        
-        public AccountController(IAccountService service, IMapper mapper)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public AccountController(IAccountService service, IMapper mapper, IHttpContextAccessor httpContextAccessor)
         {
             _service = service;
             _mapper = mapper;
+            _httpContextAccessor = httpContextAccessor;
         }
-        public IActionResult AccountIndex(string userId, int page = 1)
+        public IActionResult AccountIndex()
         {
-            const int PageSize = 5; 
-            var accounts = _service.GetAllAccounts(userId);
-
-            if (accounts != null && accounts.Any())
-            {
-                var accountModels = _mapper.Map<List<GetAccountModel>>(accounts);
-
-                var paginatedAccounts = accountModels
-                    .Skip((page - 1) * PageSize)
-                    .Take(PageSize)
-                    .ToList();
-
-                var totalAccountsCount = accountModels.Count;
-                var model = new PaginatedList<GetAccountModel>(paginatedAccounts, totalAccountsCount, page, PageSize);
-                return View(model);
-            }
-            else
-            {
-                var emptyList = new PaginatedList<GetAccountModel>(new List<GetAccountModel>(), 0, 1, PageSize);
-                return View(emptyList);
-            }
+            return View();
         }
 
 
-
-        public IActionResult Search(string userId, string searchString)
-        {
-            if (string.IsNullOrEmpty(searchString))
-            {
-                return RedirectToAction(nameof(AccountIndex));
-            }
-
-            var accounts = _service.GetAllAccounts(userId);
-
-            if (accounts == null)
-            {
-                return BadRequest("It can't be empty");
-            }
-
-            searchString = searchString.ToLower();
-
-            var searchResults = accounts
-                .Where(account =>
-                    account.AccountName.ToLower().Contains(searchString) ||
-                    account.FirstName.ToLower().Contains(searchString) ||
-                    account.LastName.ToLower().Contains(searchString) ||
-                    account.AccountType.ToString().ToLower() == searchString ||
-                    account.PhoneNumber.Contains(searchString) ||
-                    account.AccountNumberGenerated.Contains(searchString))
-                .Select(account => new GetAccountModel
-                {
-                    Id = account.Id,
-                    FirstName = account.FirstName,
-                    LastName = account.LastName,
-                    AccountName = account.AccountName,
-                    PhoneNumber = account.PhoneNumber,
-                    Email = account.Email,
-                    CurrentAccountBalance = account.CurrentAccountBalance,
-                    AccountType = account.AccountType,
-                    AccountNumberGenerated = account.AccountNumberGenerated,
-                    DateCreated = account.DateCreated,
-                    DateLastUpdated = account.DateLastUpdated
-                })
-                .ToList();
-
-            if (searchResults.Count > 0)
-            {
-                var totalItems = accounts.Count();
-                TempData["success"] = "Search successful";
-                return View("AccountIndex", new PaginatedList<GetAccountModel>(searchResults, totalItems, 1, 1)); 
-            }
-
-            return View("AccountIndex", new PaginatedList<GetAccountModel>(new List<GetAccountModel>(), 0, 1, 1));
-        }
         public async Task<IActionResult> AccountDetails(int id)
         {
             var accountDetail = await _service.GetById(id);
@@ -252,6 +185,15 @@ namespace BankApp.Controllers
 
         }
 
+        #region API CALLS
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var userId = _httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var records = _service.GetAllAccounts();
 
+            return Json(new { data = records });
+        }
+        #endregion
     }
 }
